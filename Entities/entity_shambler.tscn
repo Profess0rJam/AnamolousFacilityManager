@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fvntt4yeh688"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/Entities/EntityShambler.gd" id="1_trqup"]
+
+[node name="EntityShambler" type="Node2D"]
+script = ExtResource("1_trqup")
