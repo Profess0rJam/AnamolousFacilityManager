@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvavh8q2d5aw4"]
+
+[ext_resource type="Texture2D" uid="uid://sq8mywvsj4aw" path="res://Images/BuildingIcons/CinderblockWall1.png" id="1_k0ll1"]
+[ext_resource type="Script" path="res://Scenes and Scripts/Buildings/cinderblock_wall.gd" id="1_syda7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj12i"]
+size = Vector2(16, 16)
+
+[node name="CinderblockWall" type="Area2D" groups=["Building"]]
+script = ExtResource("1_syda7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_lj12i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_k0ll1")
+centered = false
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

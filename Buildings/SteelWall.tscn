@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj4qhylwigj3f"]
+
+[ext_resource type="Texture2D" uid="uid://cr4uabntmy7sm" path="res://Images/BuildingIcons/SteelWall1.png" id="1_fqul1"]
+[ext_resource type="Script" path="res://Scenes and Scripts/Buildings/steel_wall.gd" id="1_r26fn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10qnd"]
+size = Vector2(16, 16)
+
+[node name="SteelWall" type="Area2D" groups=["Building"]]
+script = ExtResource("1_r26fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_fqul1")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_10qnd")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

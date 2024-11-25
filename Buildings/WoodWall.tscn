@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c44a6dfbll8gd"]
+
+[ext_resource type="Texture2D" uid="uid://danyojl6dl4tk" path="res://Images/BuildingIcons/WoodWall1.png" id="1_257v5"]
+[ext_resource type="Script" path="res://Scenes and Scripts/Buildings/wood_wall.gd" id="1_pyr4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10qnd"]
+size = Vector2(16, 16)
+
+[node name="WoodWall" type="Area2D"]
+script = ExtResource("1_pyr4j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Building"]]
+texture_filter = 1
+texture = ExtResource("1_257v5")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_10qnd")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
