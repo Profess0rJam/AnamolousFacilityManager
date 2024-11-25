@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsgex66nfxwse"]
+
+[ext_resource type="Script" path="res://Scenes and Scripts/UI/StartGamePopUp.gd" id="1_uvfcd"]
+
+[node name="EventWindow" type="Node2D"]
+
+[node name="StartGamePopUp" type="AcceptDialog" parent="."]
+process_mode = 3
+title = "Welcome to the facility!"
+initial_position = 2
+size = Vector2i(400, 210)
+dialog_text = "...or at least, what we hope will become a facility! You will receive a daily subsidy of $250 to get the facility off the ground. Construct some frugal but effective containment rooms, begin research, and sell some of your findings to secure better funding. "
+dialog_autowrap = true
+script = ExtResource("1_uvfcd")
+
+[connection signal="canceled" from="StartGamePopUp" to="StartGamePopUp" method="_on_canceled"]
+[connection signal="confirmed" from="StartGamePopUp" to="StartGamePopUp" method="_on_confirmed"]
